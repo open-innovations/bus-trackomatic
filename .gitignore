@@ -1,6 +1,16 @@
 __pycache__
-downloads/gtfs-rt/archive
-downloads/timetable
 .env
 .DS_Store
 
+downloads/gtfs-rt/archive
+
+downloads/timetable/*.zip
+
+downloads/timetable/yorkshire_2025-01-24/agency.txt
+downloads/timetable/yorkshire_2025-01-24/calendar_dates.txt
+downloads/timetable/yorkshire_2025-01-24/calendar.txt
+downloads/timetable/yorkshire_2025-01-24/feed_info.txt
+downloads/timetable/yorkshire_2025-01-24/frequencies.txt
+downloads/timetable/yorkshire_2025-01-24/shapes.txt
+downloads/timetable/yorkshire_2025-01-24/stop_times.txt
+downloads/timetable/yorkshire_2025-01-24/stops.txt
