@@ -25,5 +25,5 @@ stages:
       - utils/filesystem/paths.py
       - ${TOP}/downloads/gtfs-rt/current/locations.bin
     outs:
-      - ${TOP}/maps/index.html:
+      - ${TOP}/docs/maps/index.html:
           cache: false

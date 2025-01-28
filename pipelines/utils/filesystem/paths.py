@@ -2,7 +2,7 @@ from pathlib import Path
 
 _ROOT = (Path(__file__).parent / '../../..').resolve()
 
-MAPS = _ROOT / 'maps'
+MAPS = _ROOT / 'docs/maps'
 
 DOWNLOADS = _ROOT / 'downloads'
 
