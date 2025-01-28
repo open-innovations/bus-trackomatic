@@ -13,9 +13,9 @@ stages:
     outs:
       - ${TOP}/downloads/gtfs-rt/current/locations.bin:
           cache: false
-      - ${TOP}/downloads/gtfs-rt/archive:
-          cache: false
-          persist: true
+      # - ${TOP}/downloads/gtfs-rt/archive:
+      #     cache: false
+      #     persist: true
   make-map:
     cmd: python map.py
     deps:
