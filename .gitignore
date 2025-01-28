@@ -1,0 +1,6 @@
+__pycache__
+downloads/gtfs-rt/archive
+downloads/timetable
+.env
+.DS_Store
+
