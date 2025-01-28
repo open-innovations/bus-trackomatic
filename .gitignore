@@ -2,8 +2,6 @@ __pycache__
 .env
 .DS_Store
 
-downloads/gtfs-rt/archive
-
 downloads/timetable/*.zip
 
 downloads/timetable/yorkshire_2025-01-24/agency.txt
