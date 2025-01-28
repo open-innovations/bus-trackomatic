@@ -1,0 +1,67 @@
+schema: '2.0'
+stages:
+  get-locations:
+    cmd: python locations.py
+    deps:
+    - path: ..//downloads/timetable/yorkshire_2025-01-24.zip
+      hash: md5
+      md5: bf8885afdb760ee02dfbae17f2a89ec8
+      size: 56594909
+    - path: gtfs.py
+      hash: md5
+      md5: 443114cbfbac7b946bbcd54af51fcc49
+      size: 1303
+    - path: gtfsrt.py
+      hash: md5
+      md5: a67b0a90a1c3471484ba21de589a6fbb
+      size: 2740
+    - path: https://data.bus-data.dft.gov.uk/avl/download/gtfsrt
+      hash: md5
+      checksum: '7333229584716359525134438534346290439'
+      size: 2009991
+    - path: locations.py
+      hash: md5
+      md5: b458be7f57772a373ceed66d9d2ba931
+      size: 2104
+    - path: utils/filesystem/paths.py
+      hash: md5
+      md5: 27e36d1930d5f39fc525efd6990a11ce
+      size: 249
+    outs:
+    - path: ..//downloads/gtfs-rt/archive
+      hash: md5
+      md5: 88afd0f7f5f1c3ac9df07efcdbfce77e.dir
+      size: 38444728
+      nfiles: 10
+    - path: ..//downloads/gtfs-rt/current/locations.bin
+      hash: md5
+      md5: 7065c567af64472a9fddf36539074c3f
+      size: 3851103
+  make-map:
+    cmd: python map.py
+    deps:
+    - path: ..//downloads/gtfs-rt/current/locations.bin
+      hash: md5
+      md5: 7065c567af64472a9fddf36539074c3f
+      size: 3851103
+    - path: gtfs.py
+      hash: md5
+      md5: 443114cbfbac7b946bbcd54af51fcc49
+      size: 1303
+    - path: gtfsrt.py
+      hash: md5
+      md5: a67b0a90a1c3471484ba21de589a6fbb
+      size: 2740
+    - path: map.py
+      hash: md5
+      md5: 2ac1f6c31b022dbc4d2d0ed447f3569e
+      size: 1794
+    - path: utils/filesystem/paths.py
+      hash: md5
+      md5: 27e36d1930d5f39fc525efd6990a11ce
+      size: 249
+    outs:
+    - path: ..//maps/index.html
+      hash: md5
+      md5: 12daf7dde564b5be01e653a1199ed620
+      size: 2827110

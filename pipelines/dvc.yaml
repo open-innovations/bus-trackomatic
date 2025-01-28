@@ -1,0 +1,29 @@
+vars:
+  - TOP: ../
+stages:
+  get-locations:
+    cmd: python locations.py
+    deps: 
+      - locations.py
+      - gtfs.py
+      - gtfsrt.py
+      - utils/filesystem/paths.py
+      - ${TOP}/downloads/timetable/yorkshire_2025-01-24.zip
+      - https://data.bus-data.dft.gov.uk/avl/download/gtfsrt
+    outs:
+      - ${TOP}/downloads/gtfs-rt/current/locations.bin:
+          cache: false
+      - ${TOP}/downloads/gtfs-rt/archive:
+          cache: false
+          persist: true
+  make-map:
+    cmd: python map.py
+    deps:
+      - map.py
+      - gtfsrt.py
+      - gtfs.py
+      - utils/filesystem/paths.py
+      - ${TOP}/downloads/gtfs-rt/current/locations.bin
+    outs:
+      - ${TOP}/maps/index.html:
+          cache: false
