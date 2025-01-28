@@ -55,7 +55,7 @@ if __name__ ==  '__main__':
     # Set params
     url = f"https://data.bus-data.dft.gov.uk/avl/download/gtfsrt"
     now = datetime.now().strftime("%Y-%m-%d_%H%M%S")
-    save_path = DOWNLOADS / f"gtfs-rt/archive/{now}.zip"
+    save_path = ARXIV / f"{now}.zip"
     
     # Download the live locations zip file
     download_zip_file(url, save_path)
