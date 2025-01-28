@@ -3,11 +3,13 @@ from gtfsrt import *
 from gtfs import load_gtfs
 from utils.filesystem.paths import *
 
-timetable = load_gtfs(DOWNLOADS / 'timetable/yorkshire_2025-01-24.zip')
+# timetable = load_gtfs(DOWNLOADS / 'timetable/yorkshire_2025-01-24.zip')
+routes = pd.read_csv(DOWNLOADS / 'timetable/yorkshire_2025-01-24/routes.txt')
+trips = pd.read_csv(DOWNLOADS / 'timetable/yorkshire_2025-01-24/trips.txt')
 
 # 9th element is trips.txt file. 5th element is routes.txt file. 
 # Merge these together to get some info about the bus from the timetable
-bus_detail = timetable[9][['trip_id','trip_headsign', 'route_id']].merge(timetable[5][['route_id', 'route_short_name']], on='route_id', how='inner')
+bus_detail = trips[['trip_id','trip_headsign', 'route_id']].merge(routes[['route_id', 'route_short_name']], on='route_id', how='inner')
 
 # Load data
 data = gtfsrt([DOWNLOADS / 'gtfs-rt/current/locations.bin'])
