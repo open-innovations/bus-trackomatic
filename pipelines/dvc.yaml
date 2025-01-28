@@ -8,7 +8,7 @@ stages:
       - gtfs.py
       - gtfsrt.py
       - utils/filesystem/paths.py
-      - ${TOP}/downloads/timetable/yorkshire_2025-01-24.zip
+      # - ${TOP}/downloads/timetable/yorkshire_2025-01-24.zip
       - https://data.bus-data.dft.gov.uk/avl/download/gtfsrt
     outs:
       - ${TOP}/downloads/gtfs-rt/current/locations.bin:
