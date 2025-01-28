@@ -1,0 +1,33 @@
+name: pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-pipeline:
+    name: Run data pipeline
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13.1"
+          cache: pipenv
+
+      - name: Install dependencies
+        run: |
+          pip install pipenv
+          pipenv sync
+
+      - name: Run DVC pipelines
+        run: pipenv run dvc repro -R pipelines
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update map
+          file_pattern: downloads docs pipelines
