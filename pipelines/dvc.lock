@@ -13,8 +13,8 @@ stages:
       size: 2740
     - path: https://data.bus-data.dft.gov.uk/avl/download/gtfsrt
       hash: md5
-      checksum: '211261990106525203962565842038491609020'
-      size: 2013366
+      checksum: '23302139369887290837603886456869557511'
+      size: 2076567
     - path: locations.py
       hash: md5
       md5: 29f739b74fe6151abfac390625225c62
@@ -26,20 +26,20 @@ stages:
     outs:
     - path: ..//downloads/gtfs-rt/archive
       hash: md5
-      md5: 56e1649aa2f4d617ec5c051118ee25f7.dir
-      size: 3857468
-      nfiles: 1
+      md5: 9d83ec266be49747ccf545b80a6eb443.dir
+      size: 7847360
+      nfiles: 2
     - path: ..//downloads/gtfs-rt/current/locations.bin
       hash: md5
-      md5: baf83a32ca01e405e45a0288408c0e79
-      size: 3857468
+      md5: f3133571344b533970d23741fc55a7ad
+      size: 3989892
   make-map:
     cmd: python map.py
     deps:
     - path: ..//downloads/gtfs-rt/current/locations.bin
       hash: md5
-      md5: baf83a32ca01e405e45a0288408c0e79
-      size: 3857468
+      md5: f3133571344b533970d23741fc55a7ad
+      size: 3989892
     - path: gtfs.py
       hash: md5
       md5: 443114cbfbac7b946bbcd54af51fcc49
@@ -59,5 +59,5 @@ stages:
     outs:
     - path: ..//docs/maps/index.html
       hash: md5
-      md5: bde2a2fc931da67fec41315d495cfe43
-      size: 2827136
+      md5: 057f2ac2966029f8c5f0d3e50d7ae64b
+      size: 2373301
